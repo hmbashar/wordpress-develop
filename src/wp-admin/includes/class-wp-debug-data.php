@@ -1481,6 +1481,15 @@ class WP_Debug_Data {
 			$db_collate_debug = 'undefined';
 		}
 
+		// Check DISABLE_WP_CRON (avoid using double-negative of "Disable: Disabled")
+		if ( defined( 'DISABLE_WP_CRON' ) ) {
+			$disable_wp_cron       = DISABLE_WP_CRON ? DISABLE_WP_CRON : __( 'Empty value' );
+			$disable_wp_cron_debug = DISABLE_WP_CRON;
+		} else {
+			$disable_wp_cron       = __( 'Undefined' );
+			$disable_wp_cron_debug = 'undefined';
+		}
+
 		$fields = array(
 			'ABSPATH'             => array(
 				'label'   => 'ABSPATH',
@@ -1572,6 +1581,11 @@ class WP_Debug_Data {
 				'label' => 'DB_COLLATE',
 				'value' => $db_collate,
 				'debug' => $db_collate_debug,
+			),
+			'DISABLE_WP_CRON'     => array(
+				'label' => 'DISABLE_WP_CRON',
+				'value' => $disable_wp_cron,
+				'debug' => $disable_wp_cron_debug,
 			),
 		);
 
