@@ -438,7 +438,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 	 *
 	 * @return array[]
 	 */
-	public function data_wp_image_editor_should_respect_image_edit_thumbnails_separately_filters() {
+	public static function data_wp_image_editor_should_respect_image_edit_thumbnails_separately_filters() {
 		return array(
 			'true'  => array(
 				'callback' => '__return_true',
@@ -1099,7 +1099,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 	 *
 	 * @return array
 	 */
-	public function data_wp_exif_frac2dec() {
+	public static function data_wp_exif_frac2dec() {
 		return array(
 			'invalid input: null'              => array(
 				'fraction' => null,
