@@ -560,7 +560,7 @@ class Tests_DB_Charset extends WP_UnitTestCase {
 	/**
 	 * @ticket 21212
 	 */
-	public function data_process_field_charsets() {
+	public static function data_process_field_charsets() {
 		if ( $GLOBALS['wpdb']->charset ) {
 			$charset = $GLOBALS['wpdb']->charset;
 		} else {
@@ -947,7 +947,7 @@ class Tests_DB_Charset extends WP_UnitTestCase {
 	/**
 	 * @ticket 32104
 	 */
-	public function data_dont_strip_text_from_schema_queries() {
+	public static function data_dont_strip_text_from_schema_queries() {
 		// An obviously invalid and fake table name.
 		$table_name = "\xff\xff\xff\xff";
 
