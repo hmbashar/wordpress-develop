@@ -372,7 +372,7 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 	 *     @type string $role The role to test for.
 	 * }
 	 */
-	public function data_single_site_roles_to_check() {
+	public static function data_single_site_roles_to_check() {
 		return array(
 			array( 'anonymous' ),
 			array( 'administrator' ),
@@ -1361,7 +1361,7 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 		$this->assertSame( 'publish' === $status, $contributor->has_cap( 'read_post', $post ) );
 	}
 
-	public function data_authorless_post() {
+	public static function data_authorless_post() {
 		return array( array( 'draft' ), array( 'private' ), array( 'publish' ) );
 	}
 
@@ -1566,7 +1566,7 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 		}
 	}
 
-	public function dataTaxonomies() {
+	public static function dataTaxonomies() {
 		return array(
 			array(
 				'post_tag',
@@ -2436,7 +2436,7 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 		}
 	}
 
-	public function data_block_caps() {
+	public static function data_block_caps() {
 		$post_caps = array(
 			'edit_block',
 			'read_block',
