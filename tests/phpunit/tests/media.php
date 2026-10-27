@@ -542,7 +542,7 @@ EOF;
 		$this->assertSame( $content, $result );
 	}
 
-	public function data_autoembed() {
+	public static function data_autoembed() {
 		return array(
 
 			// Should embed.
@@ -763,7 +763,7 @@ https://w.org</a>',
 	 *
 	 * @return array<non-empty-string, array{ 0: array<string, mixed> }>
 	 */
-	public function data_wp_prepare_attachment_for_js_unusable_full_size(): array {
+	public static function data_wp_prepare_attachment_for_js_unusable_full_size(): array {
 		return array(
 			'no full size'            => array(
 				array(
@@ -889,7 +889,7 @@ https://w.org</a>',
 	 *
 	 * @return array<non-falsy-string, array{ filesize: mixed, expected: int<0, max>|null }>
 	 */
-	public function data_wp_prepare_attachment_for_js_filesize(): array {
+	public static function data_wp_prepare_attachment_for_js_filesize(): array {
 		return array(
 			'an integer'                  => array(
 				'filesize' => 12345,
@@ -984,7 +984,7 @@ https://w.org</a>',
 	 *
 	 * @return array<non-falsy-string, array{ filesize: mixed }>
 	 */
-	public function data_wp_prepare_attachment_for_js_filesize_falls_back_to_the_file(): array {
+	public static function data_wp_prepare_attachment_for_js_filesize_falls_back_to_the_file(): array {
 		return array(
 			'a value smaller than a byte' => array( 'filesize' => 0.5 ),
 			'zero'                        => array( 'filesize' => 0 ),
@@ -4076,7 +4076,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_provider_fetchpriority_values() {
+	public static function data_provider_fetchpriority_values() {
 		return self::text_array_to_dataprovider( array( 'high', 'low', 'auto' ) );
 	}
 
@@ -4138,7 +4138,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_wp_get_attachment_image_decoding_attr() {
+	public static function data_wp_get_attachment_image_decoding_attr() {
 		return array(
 			'default'     => array(
 				'decoding' => 'no value',
@@ -4200,7 +4200,7 @@ EOF;
 		}
 	}
 
-	public function data_wp_lazy_loading_enabled_tag_name_defaults() {
+	public static function data_wp_lazy_loading_enabled_tag_name_defaults() {
 		return array(
 			'img => true'            => array( 'img', true ),
 			'iframe => true'         => array( 'iframe', true ),
@@ -4225,7 +4225,7 @@ EOF;
 		}
 	}
 
-	public function data_wp_lazy_loading_enabled_context_defaults() {
+	public static function data_wp_lazy_loading_enabled_context_defaults() {
 		return array(
 			'wp_get_attachment_image => true' => array( 'wp_get_attachment_image', true ),
 			'the_content => true'             => array( 'the_content', true ),
@@ -4366,7 +4366,7 @@ EOF;
 	 *     $type bool   $expected_404 Whether the page is expected to return a 404 result.
 	 * }
 	 */
-	public function data_attachment_permalinks_based_on_parent_status() {
+	public static function data_attachment_permalinks_based_on_parent_status() {
 		return array(
 			array( 'draft-attachment', '/?attachment_id=%ID%', true ),
 			array( 'publish-attachment', '/publish-post/publish-attachment', false ),
@@ -4437,7 +4437,7 @@ EOF;
 	/**
 	 * @return array<int, array{ 0: string }>
 	 */
-	public function data_wp_get_loading_attr_default(): array {
+	public static function data_wp_get_loading_attr_default(): array {
 		return array(
 			array( 'the_content' ),
 			array( 'the_post_thumbnail' ),
@@ -4683,7 +4683,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_wp_get_loading_attr_default_before_and_no_loop() {
+	public static function data_wp_get_loading_attr_default_before_and_no_loop() {
 		return array(
 			array( 'wp_get_attachment_image' ),
 			array( 'the_post_thumbnail' ),
@@ -4981,7 +4981,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_special_contexts_for_the_content() {
+	public static function data_special_contexts_for_the_content() {
 		return array(
 			'widget_media_image'      => array( 'context' => 'widget_media_image' ),
 			'the_post_thumbnail'      => array( 'context' => 'the_post_thumbnail' ),
@@ -4994,7 +4994,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_special_contexts_for_the_content_wp_get_loading_attr_default() {
+	public static function data_special_contexts_for_the_content_wp_get_loading_attr_default() {
 		return array(
 			'the_post_thumbnail'      => array( 'context' => 'the_post_thumbnail' ),
 			'wp_get_attachment_image' => array( 'context' => 'wp_get_attachment_image' ),
@@ -5382,7 +5382,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_wp_get_loading_optimization_attributes_arbitrary_contexts() {
+	public static function data_wp_get_loading_optimization_attributes_arbitrary_contexts() {
 		return array(
 			array( 'wp_get_attachment_image' ),
 			array( 'something_completely_arbitrary' ),
@@ -5450,7 +5450,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_wp_get_loading_optimization_attributes_header_context() {
+	public static function data_wp_get_loading_optimization_attributes_header_context() {
 		return array(
 			array( 'template_part_' . WP_TEMPLATE_PART_AREA_HEADER ),
 			array( 'get_header_image_tag' ),
@@ -6409,7 +6409,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_wp_get_loading_optimization_attributes_min_required_attrs() {
+	public static function data_wp_get_loading_optimization_attributes_min_required_attrs() {
 		return array(
 			'img_with_min_attrs' => array(
 				'img',
@@ -6466,7 +6466,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_wp_get_loading_optimization_attributes_check_allowed_tags() {
+	public static function data_wp_get_loading_optimization_attributes_check_allowed_tags() {
 		return array(
 			'img'    => array(
 				'img',
@@ -6689,7 +6689,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_get_filters_with_do_shortcode_callback() {
+	public static function data_get_filters_with_do_shortcode_callback() {
 		return self::text_array_to_dataprovider(
 			array(
 				'the_content',
@@ -7323,7 +7323,7 @@ EOF;
 	 *
 	 * @return array<string, mixed[]> Arguments for the test scenarios.
 	 */
-	public function data_image_with_existing_auto_sizes() {
+	public static function data_image_with_existing_auto_sizes() {
 		return array(
 			'not present'                 => array(
 				'(max-width: 1024px) 100vw, 1024px',
@@ -7381,7 +7381,7 @@ EOF;
 	 *
 	 * @return array<string, array>
 	 */
-	public function data_provider_data_provider_to_test_wp_enqueue_img_auto_sizes_contain_css_fix(): array {
+	public static function data_provider_data_provider_to_test_wp_enqueue_img_auto_sizes_contain_css_fix(): array {
 		return array(
 			'default'                     => array(
 				'set_up'   => null,
@@ -7491,7 +7491,7 @@ EOF;
 	 *
 	 * @return array<string, mixed>
 	 */
-	public function data_provider_to_test_wp_img_tag_add_auto_sizes() {
+	public static function data_provider_to_test_wp_img_tag_add_auto_sizes() {
 		return array(
 			'expected_with_single_quoted_attributes'       => array(
 				'input'    => "<img width='300' height='225' src='https://example.com/foo-300x225.jpg' srcset='https://example.com/foo-300x225.jpg 300w, https://example.com/foo-1024x768.jpg 1024w, https://example.com/foo-768x576.jpg 768w, https://example.com/foo-1536x1152.jpg 1536w, https://example.com/foo-2048x1536.jpg 2048w' sizes='(max-width: 650px) 100vw, 650px' loading='lazy'>",
@@ -7650,7 +7650,7 @@ EOF;
 	 *
 	 * @return array[]
 	 */
-	public function data_image_converted_to_other_format_has_correct_filename() {
+	public static function data_image_converted_to_other_format_has_correct_filename() {
 		return array(
 			'do not scale image' => array( false ),
 			'scale image'        => array( true ),
